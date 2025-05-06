@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   An inarguably well-designed Jekyll theme.
 baseurl: "/barks.n.bytes" # the subpath of your site, e.g. /blog
 url: "http://w3id.org" # the base hostname & protocol for your site, e.g. http://example.com
-theme: ritamargherita/barks.n.bytes
+theme: hitchens-theme
 icon: /assets/images/icon-512.png
 twitter_username: patdryburgh
 github_username:  patdryburgh
