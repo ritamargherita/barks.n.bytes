@@ -14,10 +14,15 @@ layout: default
         {{ site.title }}
       </h1>
     {% endif %}
-    {% if site.title %}
+    {% if site.subtitle %}
       <h2>
-        {{ site.description }}
+        {{ site.subtitle }}
       </h2>
+    {% endif %}
+    {% if site.description %}
+    <p class="site-description">
+        {{ site.description }}
+      </p>
     {% endif %}
   </header>
 {% endif %}

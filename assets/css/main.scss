@@ -19,3 +19,19 @@ $asset_url: '{{ '/assets' | absolute_url }}';
   "footnotes",
   "search"
 ;
+
+body {
+  background-color: #FFDF88;
+}
+
+.site-masthead h2 {
+  margin-bottom: 4rem; // increase this value for more space
+}
+
+.site-description {
+  text-align: center; /* Centers the text */
+  margin: 0 auto; /* Optional: Centers the block if you want to limit its width */
+  max-width: 800px; /* Optional: Adds a max-width for readability */
+  font-size: 1.25rem; /* Adjust the font size if necessary */
+  padding: 20px 0; /* Adds padding on top and bottom */
+}

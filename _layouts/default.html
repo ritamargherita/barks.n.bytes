@@ -6,12 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>{{ site.title }}{% if page.title and page.title != "" %} &mdash; {{ page.title }}{% endif %}</title>
+    <title>{{ site.site_name }}{% if page.title and page.title != "" %} &mdash; {{ page.title }}{% endif %}</title>
+
+    {% if site.subtitle %}<meta name="subtitle" content="{{ site.subtitle }}">{% endif %} 
 
     {% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}  
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}?{{ site.time | date: '%s%N' }}">
 
+    <link rel="apple-touch-icon" href="{{ site.icon }}">
+
+    <!-- Essential meta tags for SEO -->
+    <meta name="description" content="A blog and portfolio by Margherita Martorana, featuring insights on technology, dogs, and creativity. Let’s connect and explore more about my current work and research.">
+    <meta name="author" content="Margherita Martorana">
+    <meta name="keywords" content="AI, Margherita Martorana, technology, dogs, programming, barks n bytes">
+
+    <!-- Add Open Graph tags below -->
+    <meta property="og:title" content="Barks n Bytes">
+    <meta property="og:description" content="A blog and portfolio by Margherita Martorana, featuring insights on technology, dogs, and creativity. Let’s connect and explore more about my current work and research.">
+    <meta property="og:url" content="https://yourdomain.com/barks.n.bytes">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}?{{ site.time | date: '%s%N' }}">
     <link rel="apple-touch-icon" href="{{ site.icon }}">
 
     {%- if jekyll.environment == 'production' and site.google_analytics -%}
@@ -21,6 +37,7 @@
   </head>
   <body>
 
+    {% comment %}
     {% if page.layout == 'home' %}
       <a href="#main" class="skip-navigation">
         Skip to list of posts
@@ -30,6 +47,7 @@
         Skip to content
       </a>
     {% endif %}
+    {% endcomment %}
 
     {{ content }}
 
