@@ -45,3 +45,4 @@ plugins:
 
 paginate: 20
 paginate_path: "/page/:num/"
+ignore_theme_config: true
