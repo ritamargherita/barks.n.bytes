@@ -20,7 +20,6 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/barks.n.bytes" # the subpath of your site, e.g. /blog
 url: "http://w3id.org" # the base hostname & protocol for your site, e.g. http://example.com
 remote_theme: hitchens-theme
-ignore_theme_config: true
 icon: /assets/images/icon-512.png
 twitter_username: patdryburgh
 github_username:  patdryburgh
