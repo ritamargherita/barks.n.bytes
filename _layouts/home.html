@@ -9,21 +9,36 @@ layout: default
 {% else %}
   <header class="site-masthead">
     {% include menu.html %}
-    {% if site.title %}
+
+    {% assign home_title = page.home_title | default: site.title %}
+    {% assign home_subtitle = page.home_subtitle | default: site.subtitle %}
+    {% assign home_description = page.home_description | default: site.description %}
+
+    {% if home_title %}
       <h1>
-        {{ site.title }}
+        {{ home_title }}
       </h1>
     {% endif %}
-    {% if site.subtitle %}
+
+    {% if home_subtitle %}
       <h2>
-        {{ site.subtitle }}
+        {{ home_subtitle }}
       </h2>
     {% endif %}
-    {% if site.description %}
-    <p class="site-description">
-        {{ site.description }}
+
+    {% if home_description %}
+      <p class="site-description">
+        {{ home_description }}
       </p>
     {% endif %}
+
+    {% if page.home_signature %}
+      <p class="site-signature">
+        <strong>{{ page.home_signature }}</strong><sup>*</sup><br>
+        <small class="site-footnote">*{{ page.home_footnote }}</small>
+      </p>
+    {% endif %}
+
   </header>
 {% endif %}
 
@@ -36,9 +51,9 @@ layout: default
       Contents
     {% endif %}
   </h1>
-  
+
   {% if site.paginate and site.paginate_path %}
-    
+
     <ul class="post-list">
       {% for post in paginator.posts %}
         {% include post-list-item.html %}
@@ -70,8 +85,7 @@ layout: default
         {% include post-list-item.html %}
       {% endfor %}
     </ul>
-  
+
   {% endif %}
-    
 
 </main>

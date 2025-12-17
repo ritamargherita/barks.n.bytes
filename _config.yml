@@ -5,9 +5,7 @@ subtitle: >-
 email: m.martorana@ik.me
 
 description: >-
-  I work on AI, robotics, and hybrid intelligence — from neurosymbolic systems and the Semantic Web
-  to knowledge graphs, ontologies, LLMs, and multimodal models. Dogs and science are my two biggest
-  passions; one keeps me grounded, the other keeps me curious.
+  Margherita Martorana writes about AI, robotics, neurosymbolic systems, knowledge graphs, ontologies, LLMs, and multimodal models.
 
 baseurl: "/barks.n.bytes"
 url: "https://ritamargherita.github.io"
@@ -17,22 +15,8 @@ github_username: ritamargherita
 tagline: >-
   AI • Robotics • Neurosymbolic Systems • Knowledge Graphs • LLMs
 
-author: Dr. Margherita Martorana
-
 # Build settings
 markdown: kramdown
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
 
 plugins:
   - jekyll-paginate
