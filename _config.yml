@@ -1,28 +1,23 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Hi,
-site_name: Barks n Bytes
-subtitle: >- 
-  welcome to Barks n Bytes.
-email: m.martorana93@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  A blog and portfolio by Margherita Martorana, featuring insights on technology, dogs, and creativity. Let’s connect and explore more about my current work and research.
-baseurl: "/barks.n.bytes" # the subpath of your site, e.g. /blog
-url: "https://ritamargherita.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  ritamargherita
+title: Barks n Bytes
+subtitle: >-
+  My corner of the internet for thoughts, research notes, and reflections on technology and science.
+email: m.martorana@ik.me
+
+description: >-
+  I work on AI, robotics, and hybrid intelligence — from neurosymbolic systems and the Semantic Web
+  to knowledge graphs, ontologies, LLMs, and multimodal models. Dogs and science are my two biggest
+  passions; one keeps me grounded, the other keeps me curious.
+
+baseurl: "/barks.n.bytes"
+url: "https://ritamargherita.github.io"
+github_username: ritamargherita
+
+# Optional but useful for SEO plugins / themes
+tagline: >-
+  AI • Robotics • Neurosymbolic Systems • Knowledge Graphs • LLMs
+
+author: Dr. Margherita Martorana
 
 # Build settings
 markdown: kramdown
