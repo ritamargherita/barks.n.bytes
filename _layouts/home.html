@@ -2,87 +2,76 @@
 layout: default
 ---
 
-<main class="page-content">
+{% if site.data.menu and site.paginate and site.paginate_path and paginator.page > 1 %}
+  {% include menu.html %}
+{% elsif site.paginate and site.paginate_path and paginator.page > 1 %}
+  {% include back-link.html %}
+{% else %}
+  <header class="site-masthead">
+    {% include menu.html %}
+    {% if site.title %}
+      <h1>
+        {{ site.title }}
+      </h1>
+    {% endif %}
+    {% if site.subtitle %}
+      <h2>
+        {{ site.subtitle }}
+      </h2>
+    {% endif %}
+    {% if site.description %}
+    <p class="site-description">
+        {{ site.description }}
+      </p>
+    {% endif %}
+  </header>
+{% endif %}
 
-  <!-- HERO / INTRO -->
-  <section class="home-hero">
-    <h1>Hi, I’m Rita.</h1>
+<main class="home" id="main" role="main" aria-label="Content">
 
-    <p class="home-lead">
-      I work on AI, robotics, and neurosymbolic systems — bridging symbolic knowledge,
-      learning, and real-world robots.
-    </p>
+  <h1 class="content-title divided">
+    {% if site.paginate and site.paginate_path and paginator.page > 1 %}
+      Page {{ paginator.page }}
+    {% else %}
+      Contents
+    {% endif %}
+  </h1>
+  
+  {% if site.paginate and site.paginate_path %}
+    
+    <ul class="post-list">
+      {% for post in paginator.posts %}
+        {% include post-list-item.html %}
+      {% endfor %}
+    </ul>
 
-    <p class="home-sub">
-      This is my corner of the internet for research notes, technical writeups,
-      and reflections on building intelligent systems.
-    </p>
+    {% if paginator.total_pages > 1 %}
 
-    <div class="home-cta">
-      <a class="btn" href="#latest">Read the blog</a>
-      <a class="btn btn-outline" href="{{ '/about/' | relative_url }}">About</a>
-      <a class="btn btn-outline" href="{{ site.cv_url | relative_url }}">Download CV</a>
-    </div>
-  </section>
-
-  <!-- WHAT YOU'LL FIND HERE -->
-  <section class="home-blocks">
-    <h2>What you’ll find here</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>AI + Robotics</h3>
-        <p>
-          Planning, autonomy, manipulation, embodied AI,
-          and systems that work beyond slides and simulations.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Neurosymbolic + Knowledge</h3>
-        <p>
-          Ontologies, knowledge graphs, and practical ways
-          to combine symbols with learning.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Research → Real</h3>
-        <p>
-          Notes, demos, tools, and lessons learned
-          while shipping research prototypes.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CURRENTLY -->
-  <section class="home-now">
-    <h2>Currently</h2>
-    <p>
-      Building ontology-driven and neurosymbolic components for robotic
-      manipulation and task execution, and writing up what works
-      (and what doesn’t).
-    </p>
-  </section>
-
-  <!-- LATEST POSTS -->
-  <h2 id="latest" class="home-latest-title">Latest writing</h2>
-
-  <ul class="post-list">
-    {% for post in site.posts limit:5 %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {% if post.excerpt %}
-          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      <div class="post-pagination">
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl  }}" class="pagination-next btn">&lang;&nbsp;Older</a>
+        {% else %}
+          <span>&nbsp;</span>
         {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+        <span class="pagination-number">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination-previous btn">Newer&nbsp;&rang;</a>
+        {% else %}
+          <span>&nbsp;</span>
+        {% endif %}
+      </div>
+
+    {% endif %}
+
+  {% else %}
+
+    <ul class="post-list">
+      {% for post in site.posts %}
+        {% include post-list-item.html %}
+      {% endfor %}
+    </ul>
+  
+  {% endif %}
+    
 
 </main>
